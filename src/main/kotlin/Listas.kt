@@ -7,16 +7,23 @@ fun main() {
     println(lista1[0]);
     println("Imprimir el primero elemento de la lista.");
     println(lista1.first());
-    println(lista1.last());
+    println("Imprimir el último elemento de la lista.");
+    println(lista1.last())
+    println("Imprimir el primero elemento de la lista.");
+    println(lista1[lista1.size-1]);
+    println("Imprimir el tamaño de la lista.");
     println(lista1.size);
+    println("Imprimir un elemento específico de la lista.");
     println(lista1.get(3));
+    println("Recorrer la lista completa.");
     for(element in lista1) {
         println(element);
     }
+    println("Imprimir el elemento y su posición.");
     for(pos in lista1.indices){
         println(pos);
     }
-
+    println("Filtrar elementos específicos.");
     val a= lista1.filter { it == "Lunes" || it == "Jueves" };
     println(a);
 
@@ -58,30 +65,4 @@ fun main() {
     println(cantidad1);
     list2.removeAll { it == 6 };
     println(list2);
-
-    // MAPAS
-    println("--------------- MAPAS -------------------");
-    val prefijos:Map<Int, String> = mapOf(34 to "España", 1 to "USA", 52 to "México");
-    for((key, value) in prefijos) {
-        println("$key es el código del pais $value");
-    }
-    println(prefijos.get(52));
-    println(prefijos[1]);
-
-    println("--------------- MAPAS MUTABLES -------------------");
-    val monedas:MutableMap<String, String> = mutableMapOf("Euro" to "España", "Dolar" to "USA", "Libra esterlina" to "UK");
-    println("Paises ${monedas.values}");
-    println("Monedas ${monedas.keys}");
-
-    monedas.put("cedi", "Ghana");
-    println("Paises ${monedas.values}");
-    println("Monedas ${monedas.keys}");
-
-    monedas.remove("cedi");
-    println("Paises ${monedas.values}");
-    println("Monedas ${monedas.keys}");
-
-    monedas.clear();
-    println("Paises ${monedas.values}");
-    println("Monedas ${monedas.keys}");
 }
